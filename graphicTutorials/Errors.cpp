@@ -1,5 +1,5 @@
 #include "Errors.h"
-#include <string>
+#include <cstdlib>
 #include <iostream>
 #include <SDL/SDL.h>
 
