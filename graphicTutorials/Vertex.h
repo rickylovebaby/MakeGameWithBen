@@ -1,16 +1,20 @@
 #pragma once
 #include <GL/glew.h>
 
+struct Position {
+	float x;
+	float y;
+};
+
+struct Color {
+	GLubyte r;
+	GLubyte g;
+	GLubyte b;
+	GLubyte a;
+};
+
 struct Vertex {
-	struct Position {
-		float x;
-		float y;
-	} position;
-	struct Color {
-		GLubyte r;
-		GLubyte g;
-		GLubyte b;
-		GLubyte a;
-	} color;
+	Position position;
+	Color color;
 
 };

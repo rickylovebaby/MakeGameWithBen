@@ -5,12 +5,13 @@
 #include "Sprite.h"
 
 
-MainGame::MainGame()
+MainGame::MainGame() : _screenWidth(1024),
+						_screenHeight(768),
+						_time(0.0f),
+						_window(nullptr),
+						_gameState(GameState::PALY)
 {
-	_window = nullptr;
-	_screenWidth = 1024;
-	_screenHeight = 768;
-	_gameState = GameState::PALY;
+
 }
 
 
@@ -61,6 +62,7 @@ void MainGame::initShaders() {
 void MainGame::gameLoop() {
 	while (_gameState != GameState::EXIT) {
 		processInput();
+		_time += 0.005;
 		drawGame();
 	}
 
@@ -80,23 +82,21 @@ void MainGame::processInput() {
 }
 
 void MainGame::drawGame() {
+	
+
+
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	_colorProgram.use();
 
+	GLuint timeLocation = _colorProgram.getUniformLocation("time");
+	glUniform1f(timeLocation,_time); 
+	 
 	_sprite.draw();
 
 	_colorProgram.unuse();
-	/*
-	glEnableClientState(GL_COLOR_ARRAY);
-	glBegin(GL_TRIANGLES);
-	glColor3f(1.0f,0.0f,0.0f);
-	glVertex2f(-1, -1);  
-	glVertex2f(0, -1);
-	glVertex2f(0, 0);
-	glEnd();
-	*/
+
 	SDL_GL_SwapWindow(_window);
 
 }

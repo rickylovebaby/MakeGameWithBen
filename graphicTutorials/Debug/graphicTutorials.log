@@ -1,3 +1,4 @@
-﻿  Sprite.cpp
+﻿  MainGame.cpp
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(65): warning C4305: “+=”: 从“double”到“float”截断
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.exe
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.pdb (Partial PDB)
