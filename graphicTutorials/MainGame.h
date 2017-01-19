@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include "GLSLProgram.h"
 #include "Sprite.h"
+#include "GLTexture.h"
 enum class GameState {PALY,EXIT};
 
 class MainGame
@@ -25,8 +26,12 @@ private:
 	int _screenWidth;
 	int _screenHeight;
 	GameState _gameState;
+
 	Sprite _sprite;
+
 	GLSLProgram _colorProgram;
+
+	GLTexture _playerTexture;
 
 	float _time;
 };

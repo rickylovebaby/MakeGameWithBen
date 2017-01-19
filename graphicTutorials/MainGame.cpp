@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Sprite.h"
+#include "ImageLoader.h"
 
 
 MainGame::MainGame() : _screenWidth(1024),
@@ -22,9 +23,11 @@ MainGame::~MainGame()
 void MainGame::run() {
 	initSystems();
 	_sprite.init(-1.0f, -1.0f, 2.0f, 2.0f);
+
+	_playerTexture = ImageLoader::loadPNG("Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 	gameLoop();
 }
-
+ 
 void MainGame::initSystems() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	_window = SDL_CreateWindow("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight,SDL_WINDOW_OPENGL);
@@ -51,11 +54,12 @@ void MainGame::initSystems() {
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 
 	initShaders();
-}
+} 
 void MainGame::initShaders() {
 	_colorProgram.compileShaders("Shaders/colorShading.vert", "Shaders/colorShading.frag");
 	_colorProgram.addAttribute("vertexPosition");
 	_colorProgram.addAttribute("vertexColor");
+	_colorProgram.addAttribute("vertexUV");
 	_colorProgram.linkShaders();
 }
 
@@ -89,11 +93,18 @@ void MainGame::drawGame() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	_colorProgram.use();
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, _playerTexture.id);
+	GLint textureLocation = _colorProgram.getUniformLocation("mySampler");
+	glUniform1i(textureLocation, 0);
+
 
 	GLuint timeLocation = _colorProgram.getUniformLocation("time");
 	glUniform1f(timeLocation,_time); 
 	 
 	_sprite.draw();
+
+	glBindTexture(GL_TEXTURE_2D, 0);
 
 	_colorProgram.unuse();
 
