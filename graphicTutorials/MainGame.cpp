@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Sprite.h"
-#include "ImageLoader.h"
+//#include "ImageLoader.h"
 
 
 MainGame::MainGame() : _screenWidth(1024),
@@ -22,9 +22,16 @@ MainGame::~MainGame()
  
 void MainGame::run() {
 	initSystems();
-	_sprite.init(-1.0f, -1.0f, 2.0f, 2.0f);
 
-	_playerTexture = ImageLoader::loadPNG("Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+	_sprites.push_back(new Sprite());
+	_sprites.back()->init(-1.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+
+	_sprites.push_back(new Sprite());
+	_sprites.back()->init(0.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+
+
+
+	//_playerTexture = ImageLoader::loadPNG("Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 	gameLoop();
 }
  
@@ -80,7 +87,8 @@ void MainGame::processInput() {
 			_gameState = GameState::EXIT;
 			break;
 		case SDL_MOUSEMOTION:
-			std::cout << evnt.motion.x << " " << evnt.motion.y << std::endl;
+			//std::cout << evnt.motion.x << " " << evnt.motion.y << std::endl;
+			break;
 		}
 	}
 }
@@ -102,7 +110,10 @@ void MainGame::drawGame() {
 	GLuint timeLocation = _colorProgram.getUniformLocation("time");
 	glUniform1f(timeLocation,_time); 
 	 
-	_sprite.draw();
+	for (int i = 0; i < _sprites.size(); i++) {
+		_sprites[i]->draw();
+	}
+	
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 

@@ -1,4 +1,5 @@
 ﻿  MainGame.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(69): warning C4305: “+=”: 从“double”到“float”截断
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(78): warning C4305: “+=”: 从“double”到“float”截断
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(115): warning C4018: “<”: 有符号/无符号不匹配
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.exe
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.pdb (Partial PDB)
