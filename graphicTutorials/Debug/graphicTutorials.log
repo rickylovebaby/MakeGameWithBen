@@ -1,5 +1,9 @@
 ﻿  MainGame.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(78): warning C4305: “+=”: 从“double”到“float”截断
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(115): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(83): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(86): warning C4305: “+=”: 从“double”到“float”截断
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(102): warning C4244: “参数”: 从“float”转换到“Uint32”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(140): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(157): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\graphictutorials\maingame.cpp(160): warning C4244: “=”: 从“Uint32”转换到“float”，可能丢失数据
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.exe
   graphicTutorials.vcxproj -> C:\Users\Ricky\documents\visual studio 2015\Projects\graphicTutorials\Debug\graphicTutorials.pdb (Partial PDB)
