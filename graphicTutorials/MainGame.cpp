@@ -12,7 +12,7 @@ MainGame::MainGame() : _screenWidth(1024),
 						_gameState(GameState::PALY),
 						_maxFPS(60.0f)
 {
-
+	_camera.init(_screenWidth, _screenHeight);
 }
 
 
@@ -24,10 +24,10 @@ void MainGame::run() {
 	initSystems();
 
 	_sprites.push_back(new Bengine::Sprite());
-	_sprites.back()->init(-1.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+	_sprites.back()->init(0.0f, 0.0f, _screenWidth / 2, _screenWidth / 2, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 
-	_sprites.push_back(new Bengine::Sprite());
-	_sprites.back()->init(0.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+	_sprites.push_back(new Bengine:: Sprite());
+	_sprites.back()->init(_screenWidth / 2, 0.0f, _screenWidth / 2, _screenWidth / 2, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 
  
 
@@ -56,6 +56,9 @@ void MainGame::gameLoop() {
 
 		processInput();
 		_time += 0.01;
+
+		_camera.update();
+
 		drawGame();
 		calculateFPS();
 
@@ -79,6 +82,10 @@ void MainGame::gameLoop() {
 }
 void MainGame::processInput() {
 	SDL_Event evnt;
+	 
+	const float CAMERA_SPEED = 20.0f;
+	const float SCALE_SPEED = 0.1f;
+
 	while (SDL_PollEvent(&evnt)) {
 		switch (evnt.type)
 		{
@@ -87,6 +94,31 @@ void MainGame::processInput() {
 			break;
 		case SDL_MOUSEMOTION:
 			//std::cout << evnt.motion.x << " " << evnt.motion.y << std::endl;
+			break;
+		case SDL_KEYDOWN:
+			switch (evnt.key.keysym.sym) {
+			case SDLK_w:
+				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, CAMERA_SPEED));
+				break;
+			case SDLK_s:
+				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, -CAMERA_SPEED));
+				break;
+			case SDLK_a:
+				_camera.setPosition(_camera.getPosition() + glm::vec2(CAMERA_SPEED, 0.0f));
+				break;
+			case SDLK_d:
+				_camera.setPosition(_camera.getPosition() + glm::vec2(-CAMERA_SPEED, 0.0f));
+				break;
+
+			case SDLK_q:
+				_camera.setScale(_camera.getScale() + SCALE_SPEED);
+				break;
+			case SDLK_e:
+				_camera.setScale(_camera.getScale() - SCALE_SPEED);
+				break;
+
+			}
+
 			break;
 		}
 	}
@@ -108,6 +140,12 @@ void MainGame::drawGame() {
 
 	GLuint timeLocation = _colorProgram.getUniformLocation("time");
 	glUniform1f(timeLocation,_time); 
+
+	//set the camera matrix
+	GLuint pLocation = _colorProgram.getUniformLocation("P");
+	glm::mat4 cameraMatrix = _camera.getCameraMatrix();
+
+	glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 	 
 	for (int i = 0; i < _sprites.size(); i++) {
 		_sprites[i]->draw();

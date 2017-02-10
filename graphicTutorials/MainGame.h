@@ -6,6 +6,7 @@
 #include <Bengine/Sprite.h>
 #include <Bengine/GLTexture.h>
 #include <Bengine/Window.h>
+#include <Bengine/Camera2D.h>
 #include <vector>
 enum class GameState {PALY,EXIT};
 
@@ -36,6 +37,7 @@ private:
 	//Sprite _sprite;
 
 	Bengine::GLSLProgram _colorProgram;
+	Bengine::Camera2D _camera;
 
 	Bengine::GLTexture _playerTexture;
 

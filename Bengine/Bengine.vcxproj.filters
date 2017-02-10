@@ -48,6 +48,9 @@
     <ClCompile Include="Bengine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Camera2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Errors.h">
@@ -84,6 +87,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Bengine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera2D.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
