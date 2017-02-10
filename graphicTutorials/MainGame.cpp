@@ -1,15 +1,14 @@
 #include "MainGame.h"
-#include "Errors.h"
+#include <Bengine/Errors.h>
 #include <iostream>
 #include <string>
-#include "Sprite.h"
+#include <Bengine/Sprite.h>
 //#include "ImageLoader.h"
 
 
 MainGame::MainGame() : _screenWidth(1024),
 						_screenHeight(768),
 						_time(0.0f),
-						_window(nullptr),
 						_gameState(GameState::PALY),
 						_maxFPS(60.0f)
 {
@@ -24,10 +23,10 @@ MainGame::~MainGame()
 void MainGame::run() {
 	initSystems();
 
-	_sprites.push_back(new Sprite());
+	_sprites.push_back(new Bengine::Sprite());
 	_sprites.back()->init(-1.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 
-	_sprites.push_back(new Sprite());
+	_sprites.push_back(new Bengine::Sprite());
 	_sprites.back()->init(0.0f, -1.0f, 1.0f, 1.0f, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 
  
@@ -37,36 +36,9 @@ void MainGame::run() {
 }
  
 void MainGame::initSystems() {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	_window = SDL_CreateWindow("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight,SDL_WINDOW_OPENGL);
+	Bengine::init();
 
-	if (_window == nullptr) {
-		fatalError("SDL window could not be created!");
-	}
-
-	//Set up our OpenGL context
-	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
-	if (glContext == nullptr) {
-		fatalError("SDL_GL context could not be created!");
-	}
-
-	//set up glew(optional but recommended)
-	glewExperimental = true;
-	GLenum error = glewInit();
-	if (error != GLEW_OK) {
-		fatalError("Could not initialize glew!");
-	}
-
-
-	//check the opengl version
-	std::printf("*** Opengl Version : %s ***", glGetString(GL_VERSION));
-
-	//SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1);
-
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-
-	//set vsync,turn off
-	SDL_GL_SetSwapInterval(0);
+	_window.create("Game Engine", _screenWidth, _screenHeight, 0);
 
 	initShaders();
 } 
@@ -146,7 +118,7 @@ void MainGame::drawGame() {
 
 	_colorProgram.unuse();
 
-	SDL_GL_SwapWindow(_window);
+	_window.swapBuffer(); 
 
 }
 

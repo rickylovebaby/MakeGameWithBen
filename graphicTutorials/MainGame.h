@@ -1,9 +1,11 @@
 #pragma once
 #include <SDL/SDL.h>
 #include <GL/glew.h>
-#include "GLSLProgram.h"
-#include "Sprite.h"
-#include "GLTexture.h"
+#include <Bengine/Bengine.h>
+#include <Bengine/GLSLProgram.h>
+#include <Bengine/Sprite.h>
+#include <Bengine/GLTexture.h>
+#include <Bengine/Window.h>
 #include <vector>
 enum class GameState {PALY,EXIT};
 
@@ -24,18 +26,18 @@ private:
 	void drawGame();
 	void calculateFPS();
 
-	SDL_Window* _window;
+	Bengine::Window  _window;
 	int _screenWidth;
 	int _screenHeight;
 	GameState _gameState;
 	
 
-	std::vector<Sprite*> _sprites;
+	std::vector<Bengine::Sprite*> _sprites;
 	//Sprite _sprite;
 
-	GLSLProgram _colorProgram;
+	Bengine::GLSLProgram _colorProgram;
 
-	GLTexture _playerTexture; 
+	Bengine::GLTexture _playerTexture;
 
 	float _fps;
 	float _maxFPS;
