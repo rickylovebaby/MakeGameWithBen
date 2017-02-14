@@ -1,5 +1,6 @@
 #include "MainGame.h"
 #include <Bengine/Errors.h>
+#include <Bengine/ResourceManager.h>
 #include <iostream>
 #include <string>
 #include <Bengine/Sprite.h>
@@ -23,15 +24,6 @@ MainGame::~MainGame()
 void MainGame::run() {
 	initSystems();
 
-	_sprites.push_back(new Bengine::Sprite());
-	_sprites.back()->init(0.0f, 0.0f, _screenWidth / 2, _screenWidth / 2, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
-
-	_sprites.push_back(new Bengine:: Sprite());
-	_sprites.back()->init(_screenWidth / 2, 0.0f, _screenWidth / 2, _screenWidth / 2, "Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
-
- 
-
-	//_playerTexture = ImageLoader::loadPNG("Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
 	gameLoop();
 }
  
@@ -41,6 +33,7 @@ void MainGame::initSystems() {
 	_window.create("Game Engine", _screenWidth, _screenHeight, 0);
 
 	initShaders();
+	_spriteBatch.init();
 } 
 void MainGame::initShaders() {
 	_colorProgram.compileShaders("Shaders/colorShading.vert", "Shaders/colorShading.frag");
@@ -98,10 +91,10 @@ void MainGame::processInput() {
 		case SDL_KEYDOWN:
 			switch (evnt.key.keysym.sym) {
 			case SDLK_w:
-				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, CAMERA_SPEED));
+				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, -CAMERA_SPEED));
 				break;
 			case SDLK_s:
-				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, -CAMERA_SPEED));
+				_camera.setPosition(_camera.getPosition() + glm::vec2(0.0f, CAMERA_SPEED));
 				break;
 			case SDLK_a:
 				_camera.setPosition(_camera.getPosition() + glm::vec2(CAMERA_SPEED, 0.0f));
@@ -118,11 +111,11 @@ void MainGame::processInput() {
 				break;
 
 			}
-
 			break;
+
 		}
 	}
-}
+} 
 
 void MainGame::drawGame() {
 	
@@ -131,7 +124,7 @@ void MainGame::drawGame() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	_colorProgram.use();
+	_colorProgram.use(); 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, _playerTexture.id);
 	GLint textureLocation = _colorProgram.getUniformLocation("mySampler");
@@ -140,17 +133,31 @@ void MainGame::drawGame() {
 
 	GLuint timeLocation = _colorProgram.getUniformLocation("time");
 	glUniform1f(timeLocation,_time); 
-
+	 
 	//set the camera matrix
 	GLuint pLocation = _colorProgram.getUniformLocation("P");
 	glm::mat4 cameraMatrix = _camera.getCameraMatrix();
 
 	glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 	 
-	for (int i = 0; i < _sprites.size(); i++) {
-		_sprites[i]->draw();
-	}
-	
+
+	_spriteBatch.begin();
+
+	glm::vec4 pos(0.0f, 0.0f, 50.0f, 50.0f);
+	glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
+	static Bengine::GLTexture texture = Bengine::ResourceManager::getTexture("Textures/jimmyJump_pack/PNG/CharacterRight_Standing.png");
+	Bengine::Color color;
+	color.r = 255;
+	color.g = 255;
+	color.b = 255;
+	color.a = 255;
+
+	_spriteBatch.draw(pos,uv,texture.id,0.0f,color);
+	_spriteBatch.draw(pos + glm::vec4(50,0,0,0), uv, texture.id, 0.0f, color);
+
+	_spriteBatch.end();
+
+	_spriteBatch.renderBatch();
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 

@@ -21,7 +21,7 @@ namespace Bengine {
 			_cameraMatrix = glm::scale(_cameraMatrix, scale);
 
 			translate = glm::vec3(_screenWidth/2,_screenHeight/2, 0.0f);
-			_cameraMatrix = glm::translate(_orthoMatrix, translate);
+			_cameraMatrix = glm::translate(_cameraMatrix, translate);
 			_needsMatrixUpdate = false;
 
 		}
