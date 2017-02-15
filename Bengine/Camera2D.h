@@ -11,6 +11,10 @@ namespace Bengine {
 		void init(int screenWidth, int screenHeight);
 
 		void update();
+
+		glm::vec2 convertScreenToWorld(glm::vec2 screenCoords);
+
+
 		//setters
 		void setPosition(const glm::vec2 newPosition) {
 			_position = newPosition;

@@ -1,6 +1,7 @@
 #pragma once
 #include "GLTexture.h"
 #include <string>
+
 namespace Bengine {
 	class ImageLoader
 	{

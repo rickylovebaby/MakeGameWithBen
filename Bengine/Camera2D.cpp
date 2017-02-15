@@ -14,17 +14,32 @@ namespace Bengine {
 
 	void Camera2D::update() {
 		if (_needsMatrixUpdate) {
-			glm::vec3 translate(-_position.x, -_position.y, 0.0f);
+			glm::vec3 translate(-_position.x + _screenWidth / 2, -_position.y + _screenHeight / 2, 0.0f);
 			_cameraMatrix = glm::translate(_orthoMatrix, translate);
 
 			glm::vec3 scale(_scale, _scale, 0.0f);
 			_cameraMatrix = glm::scale(_cameraMatrix, scale);
 
+			/*
 			translate = glm::vec3(_screenWidth/2,_screenHeight/2, 0.0f);
-			_cameraMatrix = glm::translate(_orthoMatrix, translate);
+			_cameraMatrix = glm::translate(_cameraMatrix, translate);
+			*/
 			_needsMatrixUpdate = false;
 
 		}
+	}
+	glm::vec2 Camera2D::convertScreenToWorld(glm::vec2 screenCoords) {
+
+		screenCoords.y = _screenHeight - screenCoords.y;
+
+		screenCoords -= glm::vec2(_screenWidth / 2, _screenHeight / 2);
+
+		screenCoords /= _scale;
+
+		screenCoords += _position;
+		
+		return screenCoords;
+
 	}
 
 	void Camera2D::init(int screenWidth, int screenHeight) {

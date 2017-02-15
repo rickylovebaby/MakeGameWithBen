@@ -51,6 +51,15 @@
     <ClCompile Include="Camera2D.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteBatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Timing.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Errors.h">
@@ -92,5 +101,22 @@
     <ClInclude Include="Camera2D.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SpriteBatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Timing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Bengine.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
