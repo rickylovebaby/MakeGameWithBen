@@ -1,22 +1,27 @@
-﻿  Zombie.cpp
-  Player.cpp
-  MainGame.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\maingame.cpp(15): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\maingame.cpp(80): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\maingame.cpp(98): warning C4244: “参数”: 从“Sint32”转换到“float”，可能丢失数据
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\maingame.cpp(140): warning C4018: “<”: 有符号/无符号不匹配
-  Level.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\level.cpp(31): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\level.cpp(32): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\level.cpp(55): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\level.cpp(56): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-  Human.cpp
-  Agent.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\agent.cpp(43): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials22\graphictutorials\zombiegame\agent.cpp(54): warning C4244: “参数”: 从“float”转换到“unsigned int”，可能丢失数据
+﻿  MainGame.cpp
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(23): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(57): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(71): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(120): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(124): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(128): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(129): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(135): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(136): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(141): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(168): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(181): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(184): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(212): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(254): warning C4244: “参数”: 从“Sint32”转换到“float”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(296): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(299): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\maingame.cpp(304): warning C4018: “<”: 有符号/无符号不匹配
+  Bullets.cpp
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\bullets.cpp(66): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\bullets.cpp(67): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\bullets.cpp(70): warning C4018: “>=”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\zombiegame\bullets.cpp(71): warning C4018: “>=”: 有符号/无符号不匹配
   正在生成代码...
-  正在编译...
-  main.cpp
-  正在生成代码...
-  ZombieGame.vcxproj -> C:\Users\Ricky\Documents\Visual Studio 2015\Projects\graphicTutorials22\graphicTutorials\Debug\ZombieGame.exe
-  ZombieGame.vcxproj -> C:\Users\Ricky\Documents\Visual Studio 2015\Projects\graphicTutorials22\graphicTutorials\Debug\ZombieGame.pdb (Partial PDB)
+  ZombieGame.vcxproj -> C:\Users\Ricky\Documents\Visual Studio 2015\Projects\graphicTutorials\Debug\ZombieGame.exe
+  ZombieGame.vcxproj -> C:\Users\Ricky\Documents\Visual Studio 2015\Projects\graphicTutorials\Debug\ZombieGame.pdb (Partial PDB)

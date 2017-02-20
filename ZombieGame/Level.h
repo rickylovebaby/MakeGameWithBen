@@ -13,6 +13,11 @@ public:
 
 	void draw();
 
+	int getWidth() const { return _levelData[0].size();}
+	int getHeight() const { return _levelData.size();}
+
+	int getNumHumans() const { return _numHumans; }
+
 	const std::vector<std::string>& getLevelData() const {
 		return _levelData;
 	}

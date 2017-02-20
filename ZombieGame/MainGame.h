@@ -7,6 +7,7 @@
 #include <Bengine/SpriteBatch.h>
 #include "Level.h"
 #include "Player.h"
+#include "Bullets.h"
 
 
 class Zombie;
@@ -40,6 +41,12 @@ private:
 
 	//update all agent
 	void updateAgents();
+	//update bullets
+	void updateBullets();
+
+	//check the victory
+	void checkVictory();
+
     /// Handles input processing
     void processInput();
     /// Renders the game
@@ -64,6 +71,11 @@ private:
 	Player* _player;
 	std::vector<Human*> _humans;
 	std::vector<Zombie*> _zombies;
+	std::vector<Bullets> _bullets;
+
+
+	int _numHumassKilled;
+	int _numZombiesKilled;
 
 	GameState _gameState;
 
