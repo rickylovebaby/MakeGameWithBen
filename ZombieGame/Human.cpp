@@ -14,7 +14,7 @@ Human::~Human()
 void Human::init(float speed, glm::vec2 pos) {
 
 	static std::mt19937 randomEngine(time(nullptr));
-	static std::uniform_real_distribution<float> randDir(-5.0f, 5.0f);
+	static std::uniform_real_distribution<float> randDir(-40.0f, 40.0f);
 
 	_health = 20;
 
@@ -39,7 +39,7 @@ void Human::update(const std::vector<std::string>& levelData,
 	std::vector<Zombie*>& zombies) {
 
 	static std::mt19937 randomEngine(time(nullptr));
-	static std::uniform_real_distribution<float> randRotate(-5.0f, 5.0f);
+	static std::uniform_real_distribution<float> randRotate(-40.0f, 40.0f);
 	_position += _direction * _speed;
 
 	//randomly change direction every 20 frame

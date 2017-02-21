@@ -1,10 +1,10 @@
-﻿  Timing.cpp
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\timing.cpp(19): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\timing.cpp(23): warning C4244: “参数”: 从“float”转换到“Uint32”，可能丢失数据
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\timing.cpp(36): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
-c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\timing.cpp(39): warning C4244: “=”: 从“Uint32”转换到“float”，可能丢失数据
+﻿  SpriteBatch.cpp
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\spritebatch.cpp(58): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\ricky\documents\visual studio 2015\projects\graphictutorials\bengine\spritebatch.cpp(86): warning C4018: “<”: 有符号/无符号不匹配
+  Sprite.cpp
   InputManager.cpp
   正在生成代码...
+cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
 LINK : warning LNK4068: 未指定 /MACHINE；默认设置为 X86
 opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 SDL2.lib(SDL2.dll) 中定义；已忽略第二个定义
 opengl32.lib(OPENGL32.dll) : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件

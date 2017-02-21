@@ -40,7 +40,7 @@ protected:
 	void collideWithTile(glm::vec2 tilePos);
 
 	glm::vec2 _position;
-	Bengine::Color _color;
+	Bengine::ColorRGBA8 _color;
 	float _speed;
 	float _health;
 

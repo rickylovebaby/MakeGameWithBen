@@ -39,6 +39,9 @@
     <ClCompile Include="Gun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Bullets.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainGame.h">
@@ -60,6 +63,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Gun.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullets.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

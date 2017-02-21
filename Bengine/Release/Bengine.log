@@ -1,0 +1,22 @@
+﻿  Bengine.cpp
+  Camera2D.cpp
+  Errors.cpp
+  GLSLProgram.cpp
+  ImageLoader.cpp
+  InputManager.cpp
+  ResourceManager.cpp
+  Sprite.cpp
+  SpriteBatch.cpp
+SpriteBatch.cpp(58): warning C4018: “<”: 有符号/无符号不匹配
+SpriteBatch.cpp(86): warning C4018: “<”: 有符号/无符号不匹配
+  TextureCache.cpp
+  Timing.cpp
+Timing.cpp(19): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
+Timing.cpp(23): warning C4244: “参数”: 从“float”转换到“Uint32”，可能丢失数据
+Timing.cpp(36): warning C4244: “初始化”: 从“Uint32”转换到“float”，可能丢失数据
+Timing.cpp(39): warning C4244: “=”: 从“Uint32”转换到“float”，可能丢失数据
+  Window.cpp
+LINK : warning LNK4068: 未指定 /MACHINE；默认设置为 X86
+opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 SDL2.lib(SDL2.dll) 中定义；已忽略第二个定义
+glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 SDL2.lib(SDL2.dll) 中定义；已忽略第二个定义
+  Bengine.vcxproj -> C:\Users\Ricky\Documents\Visual Studio 2015\Projects\graphicTutorials\Release\Bengine.lib

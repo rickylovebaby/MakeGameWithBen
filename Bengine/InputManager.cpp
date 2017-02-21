@@ -11,6 +11,19 @@ namespace Bengine {
 	{
 	}
 
+	void InputManager::update() {
+		/*
+		
+		for (auto it = _keyMap.begin(); it != _keyMap.end(); it++) {
+			_previouskeyMap[it->first] = it->second;
+		}
+		*/
+
+		for (auto& it : _keyMap) {
+			_previouskeyMap[it.first] = it.second;
+		}
+	}
+
 	void InputManager::pressKey(unsigned int keyID) {
 		_keyMap[keyID] = true; 
 	}
@@ -25,7 +38,7 @@ namespace Bengine {
 	}
 
 
-	bool InputManager::isKeyPressed(unsigned int keyID) {
+	bool InputManager::isKeyDown(unsigned int keyID) {
 		auto it = _keyMap.find(keyID);
 		if (it != _keyMap.end()) {
 			return it->second;
@@ -34,6 +47,26 @@ namespace Bengine {
 			return false;
 		}
 	}
+
+	bool InputManager::isKeyPressed(unsigned int keyID) {
+
+		//check if it is pressed this frame, and wasn't pressed last frame
+		if (isKeyDown(keyID) == true && wasKeyDown(keyID) == false) {
+			return true;
+		}
+		return false;
+	}
+
+	bool InputManager::wasKeyDown(unsigned int keyID) {
+		auto it = _previouskeyMap.find(keyID);
+		if (it != _previouskeyMap.end()) {
+			return it->second;
+		}
+		else {
+			return false;
+		}
+	}
+
 
 
 }

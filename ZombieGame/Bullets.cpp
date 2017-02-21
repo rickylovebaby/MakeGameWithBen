@@ -31,7 +31,7 @@ void Bullets::draw(Bengine::SpriteBatch& spriteBatch) {
 
 	const glm::vec4 uvRect(0.0f, 0.0f, 1.0f, 1.0f);
 
-	Bengine::Color color;
+	Bengine::ColorRGBA8 color;
 	color.r = 75;
 	color.g = 75;
 	color.b = 75;
